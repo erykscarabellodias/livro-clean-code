@@ -1,4 +1,4 @@
-#Bom uso de switches
+# Bom uso de switches
 
 No caso incorreto, a classe **Payroll** cresceria infinitamente enquanto tivermos novos tipos de **Employees**. A tendência com isso é que a classe fique enorme e com diversos métodos que abstraídos fazem a mesma coisa (pagamento, por exemplo, é um método que será implementado para todos os tipos de **Employees** e apesar da diferença de implementação, a ação em si é a mesma para todos). Além disso, atribuímos a um simples switch uma grande parte de uma regra de negócio importante.
 
