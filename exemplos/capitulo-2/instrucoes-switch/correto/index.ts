@@ -1,7 +1,7 @@
 import { EmployeeRecord } from "./employee/EmployeeRecord";
-import { EmployeeFactoreImpl } from "./employeeFactory/implementation/EmployeeFactoryImpl";
+import { EmployeeFactory } from './employee/EmployeeFactory'
 
-const employeeFactory = new EmployeeFactoreImpl();
+const employeeFactory = new EmployeeFactory();
 const employeeRecord = new EmployeeRecord('COMMISSIONED');
 const employee = employeeFactory.makeEmployee(employeeRecord);
 
