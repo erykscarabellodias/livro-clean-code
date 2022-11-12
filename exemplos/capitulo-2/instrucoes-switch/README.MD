@@ -1,0 +1,7 @@
+# Como usar switches
+
+No caso incorreto, a classe **Payroll** cresceria infinitamente enquanto tivermos novos tipos de **Employees**. A tendência com isso é que a classe fique enorme e com diversos métodos que abstraídos fazem a mesma coisa (pagamento, por exemplo, é um método que será implementado para todos os tipos de **Employees** e apesar da diferença de implementação, a ação em si é a mesma para todos).
+
+Para melhorar este caso, criarmos uma classe abstrata de **Employee** e estendemos ela em **EmployeeRecord**. A partir daí, todos tipos de "Employees" estendem de **EmployeeRecord** e implementam seu método abstrato de pagamento com suas regras de negócio, além de setar o tipo no construtor do pai. Para instanciar o tipo correto de "employee", criamos uma factory que instancia o objeto de acordo com o tipo dele.
+
+O switch agora existe dentro da **EmployeeFactory**, e a regra de negócio do pagamento em si está dentro da implementação do **Employee**. Assim, quando um novo tipo de "employee" for criado, precisaremos abrir a **EmployeeFactory** pelo único motivo que ela existe: criar uma implementação específica dele. Já nossa regre de negócio é guardada em um método comum a todos, com suas especificidades onde tem que estar.
